@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Indian Law",
+    "subtitle": "IPCs and CRPCs",
+    "description": "Read about the latest updates in the legal field and downloadable IPC and CRC",
+    "image": "/img/IndianLaw.jpg",
+    "services_no": 1
+  },
+  {
+    "title": "Blogs",
+    "subtitle": "Explore",
+    "description": "  Read the blogs by our working Professionals dedicated specifically to recent updates",
+    "image": "/img/Blog.jpg",
+    "services_no": 2
+  },
+  {
+    "title": "STUDENTS CORNER",
+    "subtitle": "Free Books and more",
+    "description": "Get access to the free knowledge and keep yourself updated with current happenings!",
+    "image": "/img/Books.jpg",
+    "services_no": 3
+  }
+]

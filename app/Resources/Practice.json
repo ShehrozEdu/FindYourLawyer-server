@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Bankruptcy",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/bankruptcy.png",
+    "practice_id": 1
+  },
+  {
+    "title": "Civil Rights",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/civil.png",
+    "practice_id": 2
+  },
+  {
+    "title": "Constitutional",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/constitutional.png",
+    "practice_id": 3
+  },
+  {
+    "title": "Contract",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/contract.png",
+    "practice_id": 4
+  },
+  {
+    "title": "Corporate",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/corporate.png",
+    "practice_id": 5
+  },
+  {
+    "title": "Employment",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/employment.png",
+    "practice_id": 6
+  },
+  {
+    "title": "Environment",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/environment.png",
+    "practice_id": 7
+  },
+  {
+    "title": " Family",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/family.png",
+    "practice_id": 8
+  },
+  {
+    "title": "Malpractice",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/malpractise.png",
+    "practice_id": 9
+  },
+  {
+    "title": "Property",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/property.jpg",
+    "practice_id": 10
+  },
+  {
+    "title": "Public",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/public.png",
+    "practice_id": 11
+  },
+  {
+    "title": "Real Estate",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/realestate.png",
+    "practice_id": 12
+  },
+  {
+    "title": "Criminal",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/criminal.png",
+    "practice_id": 13
+  },
+  {
+    "title": "Tax",
+    "subtitle": " Hire the best Lawyers in this section!",
+    "description": "Put forward your problem with the expertise and get instant solutions  with satisfactory results",
+    "image": "/img/tax1.png",
+    "practice_id": 14
+  }
+]

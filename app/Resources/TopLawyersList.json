@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Soli Sorabjee",
+    "image": "/images/TopLawyer1.jpg",
+    "description": "Some important cases fought by him include - Maneka Gandhi, Keshavananda Bharati, IR Coelho, SR Bommai, BP Singhal, etc."
+  },
+  {
+    "name": "Fali Sam Nariman",
+    "image": "/images/TopLawyer2.jpg",
+    "description": "High-profile cases fought by him include the infamous Bhopal gas tragedy, Golak Nath, SP Gupta, TMA Pai Foundation, and the likes."
+  },
+  {
+    "name": "Ram Jethmalani",
+    "image": "/images/TopLawyer3.jpg",
+    "description": "Famous cases - KM Nanavati vs. State of Maharashtra, Jessica Lall murder, defended Rajiv Gandhi and Indira Gandhi’s killers, underworld don Haji Mastan’s etc"
+  },
+  {
+    "name": "Mukul Rohtagi",
+    "image": "/images/TopLawyer4.jpg",
+    "description": "Famous cases fought by him include Y K Sabharwal property suit, Jharkhand Assembly floor test , 2002 Gujarat Riots, Ambani brothers’ gas supply , etc."
+  }
+]

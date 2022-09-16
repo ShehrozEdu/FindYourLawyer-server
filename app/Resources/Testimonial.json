@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Elon Musk",
+    "position": "CEO, Tesla",
+    "description": "I was once a disbeliever myself. I didn’t like popups at all. But the results speak for themselves, it just works. FindYourLawyer makes it super easy and is well worth the money. The ease of use of the whole thing. Even though I dislike popups, it makes it almost enjoyable.",
+    "image": "/img/elon.jpg"
+  },
+  {
+    "name": "Ratan tata",
+    "position": "Chairman, TATA",
+    "description": "I was once a disbeliever myself. I didn’t like popups at all. But the results speak for themselves, it just works. FindYourLawyer makes it super easy and is well worth the money. The ease of use of the whole thing. Even though I dislike popups, it makes it almost enjoyable.",
+    "image": "/img/ratan.jpg"
+  },
+  {
+    "name": " Andy Jazzy",
+    "position": "CEO, Amazon",
+    "description": "I was once a disbeliever myself. I didn’t like popups at all. But the results speak for themselves, it just works. FindYourLawyer makes it super easy and is well worth the money. The ease of use of the whole thing. Even though I dislike popups, it makes it almost enjoyable.",
+    "image": "/img/amazon.jpg"
+  }
+]
