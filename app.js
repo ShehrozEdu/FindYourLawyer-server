@@ -3,9 +3,9 @@ const Razorpay = require("razorpay");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const UserRouter = require("./app/Routes/Userrouter");
-const PostRouter = require("./app/Routes/PostRouter");
-const OtherRouters = require("./app/Routes/OtherRouters");
+// const UserRouter = require("./app/Routes/Userrouter");
+// const PostRouter = require("./app/Routes/PostRouter");
+const Routers = require("./app/Routes/OtherRouters");
 const razor = require("./app/Controllers/Payment");
 // const nodemailer = require("nodemailer");
 const {
@@ -25,14 +25,9 @@ app.use(cors());
 //RAZORPAY
 app.use("/payment", razor);
 
-//user Router
-app.use("/api/users", UserRouter);
-
-//post Router
-app.use("/api/posts", PostRouter);
 
 //other Router
-app.use("/api", OtherRouters);
+app.use("/api", Routers);
 
 //Err Handler
 app.use(errorHandler);
