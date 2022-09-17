@@ -10,6 +10,7 @@ const LawyersListController = require("../Controllers/LawyersListControllers");
 const ArticleController = require("../Controllers/ArticleController");
 
 //Books
+OtherRouters.post("/", BooksController.apiHome);
 OtherRouters.post("/add-books", BooksController.addBooks);
 OtherRouters.get("/books", BooksController.getBooks);
 

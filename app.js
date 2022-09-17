@@ -25,7 +25,6 @@ app.use(cors());
 //RAZORPAY
 app.use("/payment", razor);
 
-
 //other Router
 app.use("/api", Routers);
 
@@ -36,7 +35,7 @@ app.use(notFound);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    app.listen(5000, () => {
+    app.listen(process.env.PORT || 5000, () => {
       console.log("Connected to PORT 5000");
     });
   })
