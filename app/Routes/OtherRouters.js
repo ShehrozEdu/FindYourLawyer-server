@@ -8,9 +8,9 @@ const NewsController = require("../Controllers/NewsController");
 const TopLawyersListController = require("../Controllers/TopLawyersListController");
 const LawyersListController = require("../Controllers/LawyersListControllers");
 const ArticleController = require("../Controllers/ArticleController");
+const PaymentController = require("../Controllers/PaymentController");
 
 //Books
-OtherRouters.get("/", BooksController.apiHome);
 OtherRouters.post("/add-books", BooksController.addBooks);
 OtherRouters.get("/books", BooksController.getBooks);
 
