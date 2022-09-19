@@ -3,6 +3,20 @@ const BooksModel = require("../Models/BooksModel");
 const books = require("../Resources/Books.json");
 
 const BooksController = {
+  apiHome: function (req, res) {
+    try {
+      res.status(200).send({
+        status: true,
+      });
+    } catch (error) {
+      res.status(500).send({
+        status: false,
+        message: "server error",
+        error,
+      });
+    }
+  },
+
   getBooks: expressAsyncHandler(async function (req, res) {
     try {
       let result = await BooksModel.find();
