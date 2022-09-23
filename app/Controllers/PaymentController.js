@@ -1,6 +1,3 @@
-require("dotenv").config();
-const { v4: uuidv4 } = require("uuid");
-const https = require("https");
 const Razorpay = require("razorpay");
 var crypto = require("crypto");
 
@@ -40,7 +37,7 @@ module.exports.callback = async (request, response) => {
   let bodyText = order_id + "|" + payment_id;
 
   var expectedSignature = crypto
-    .createHmac("sha256", "BtZt5ImkNe9AkW8aqd3seVhE")
+    .createHmac("sha256", process.env.RAZOR_SECRET)
     .update(bodyText.toString())
     .digest("hex");
 
