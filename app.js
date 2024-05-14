@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //cors
 app.use(cors({
-  origin: 'https://findyourlawyer.netlify.app/',
+  origin: 'https://findyourlawyer.netlify.app',
   credentials: true
 }));
 
