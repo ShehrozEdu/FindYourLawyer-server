@@ -1,8 +1,9 @@
 // models/casesLawyers.js
 
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const casesLawyersSchema = new mongoose.Schema({
+const casesLawyersSchema = new Schema({
   client: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User", // Refers to the User model
@@ -16,4 +17,5 @@ const casesLawyersSchema = new mongoose.Schema({
   income: Number,
 });
 
-module.exports = mongoose.model("CasesLawyers", casesLawyersSchema);
+const CasesLawyer = mongoose.model("CasesLawyers", casesLawyersSchema);
+module.exports = CasesLawyer;

@@ -8,7 +8,6 @@ const NewsController = require("../Controllers/NewsController");
 const TopLawyersListController = require("../Controllers/TopLawyersListController");
 const LawyersListController = require("../Controllers/LawyersListControllers");
 const PaymentController = require("../Controllers/PaymentController");
-const LawyerDashboard = require("../Models/LawyerDashboard");
 const Dashboard = require("../Controllers/Dashboard");
 const CaseLawyers = require("../Controllers/CaseLawyers");
 const BlogController = require("../Controllers/BlogController");

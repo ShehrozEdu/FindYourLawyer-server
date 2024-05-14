@@ -1,4 +1,4 @@
-const CasesLawyers = require("../models/CasesLawyers");
+const CasesLawyers = require("../Models/CasesLawyers");
 
 const CaseLawyers = {
   getAllCasesLawyers: async (req, res) => {
@@ -21,5 +21,5 @@ const CaseLawyers = {
     }
   },
 };
-
+ 
 module.exports = CaseLawyers;
