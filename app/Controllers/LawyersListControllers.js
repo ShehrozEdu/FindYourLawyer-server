@@ -1,38 +1,23 @@
 const expressAsyncHandler = require("express-async-handler");
-const LawyersModel = require("../Models/LawyersListModel");
-const Lawyers = require("../Resources/LawyersList.json");
+const UsersModel = require("../Models/UsersModel");
 
 const LawyersListController = {
-  getLawyersList: expressAsyncHandler(async function (req, res) {
-    let id = req.query.lid;
-    id = id ? id : 0;
+  getLawyersByExpertise: expressAsyncHandler(async function (req, res) {
     try {
-      let result = await LawyersModel.find({ practiceId: id });
-      res.status(200).send({
-        status: true,
-        LawyersList: result,
-      });
-    } catch (error) {
-      res.status(500).send({
-        status: false,
-        message: "server error",
-        error,
-      });
-    }
-  }),
+      const { expertise } = req.query;
 
-  addLawyersList: expressAsyncHandler(async function (req, res) {
-    try {
-      let result = await LawyersModel.insertMany(Lawyers);
+      const expertiseRegex = new RegExp(expertise, "i");
+      const lawyers = await UsersModel.find({ isLawyer: true, Expertise: { $regex: expertiseRegex } });
+
       res.status(200).send({
         status: true,
-        message: "LawyersList added successfully",
-        result,
+        length:lawyers.length,
+        lawyers,
       });
     } catch (error) {
       res.status(500).send({
         status: false,
-        message: "server error",
+        message: "Server error",
         error,
       });
     }

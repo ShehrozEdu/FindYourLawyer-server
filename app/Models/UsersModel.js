@@ -17,14 +17,38 @@ const UsersSchema = new Schema(
       type: String,
       required: true,
     },
-    // ContactNo: {
-    //   type: Number,
-    //   required: true,
-    // },
     isLawyer: {
       type: Boolean,
-      default: false,
     },
+    token: {
+      type: String,
+    },
+
+    FeePerCase: {
+      type: Number,
+      required: function () {
+        return this.isLawyer === true;
+      },
+    },
+    ContactNumber: {
+      type: Number,
+      required: function () {
+        return this.isLawyer === true;
+      },
+    },
+    Expertise: {
+      type: String,
+      required: function () {
+        return this.isLawyer === true;
+      },
+    },
+    State: {
+      type: String,
+      required: function () {
+        return this.isLawyer === true;
+      },
+    },
+ 
   },
   {
     timestamps: true,

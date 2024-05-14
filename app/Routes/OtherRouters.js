@@ -7,8 +7,11 @@ const PracticeController = require("../Controllers/PracticeController");
 const NewsController = require("../Controllers/NewsController");
 const TopLawyersListController = require("../Controllers/TopLawyersListController");
 const LawyersListController = require("../Controllers/LawyersListControllers");
-const ArticleController = require("../Controllers/ArticleController");
 const PaymentController = require("../Controllers/PaymentController");
+const LawyerDashboard = require("../Models/LawyerDashboard");
+const Dashboard = require("../Controllers/Dashboard");
+const CaseLawyers = require("../Controllers/CaseLawyers");
+const BlogController = require("../Controllers/BlogController");
 
 //Books
 OtherRouters.post("/add-books", BooksController.addBooks);
@@ -39,15 +42,29 @@ OtherRouters.post(
 OtherRouters.get("/topLawyers", TopLawyersListController.getTopLawyersList);
 
 //LawyersList
-OtherRouters.post("/add-LawyersList", LawyersListController.addLawyersList);
-OtherRouters.get("/lawyersList", LawyersListController.getLawyersList);
+// OtherRouters.post("/add-LawyersList", LawyersListController.addLawyersList);
+OtherRouters.get("/lawyersListExpertise", LawyersListController.getLawyersByExpertise);
 
-//article
-OtherRouters.post("/add-blogs", ArticleController.addArticle);
-OtherRouters.get("/blogs", ArticleController.getArticle);
+
+
+
+//Cases
+OtherRouters.get("/all-cases", CaseLawyers.getAllCasesLawyers);
+OtherRouters.get("/my-cases/:lawyerId", CaseLawyers.getCasesByLawyerId);
+OtherRouters.post("/case-requests/create", Dashboard.createRequest);
+
+
+//Blogs
+OtherRouters.post("/blogs/create-blog", BlogController.create);
+OtherRouters.get("/all-blogs", BlogController.getAll);
+OtherRouters.get("/all-blogs/:blogId", BlogController.getById);
+OtherRouters.put("/all-blogs/:blogId", BlogController.update);
+OtherRouters.delete("/all-blogs/:blogId", BlogController.delete);
+
 
 //CONTact
 OtherRouters.post("/payment", PaymentController.payment); // react
 OtherRouters.post("/callback", PaymentController.callback); // react
+
 
 module.exports = OtherRouters;
