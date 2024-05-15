@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //cors
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://findyourlawyer.netlify.app',
   credentials: true
 }));
 
