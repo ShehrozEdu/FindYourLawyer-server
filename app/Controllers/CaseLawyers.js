@@ -21,5 +21,5 @@ const CaseLawyers = {
     }
   },
 };
- 
+
 module.exports = CaseLawyers;
