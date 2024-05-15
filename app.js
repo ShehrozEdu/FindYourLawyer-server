@@ -1,4 +1,5 @@
 require("dotenv").config();
+const Razorpay = require("razorpay");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -21,10 +22,11 @@ app.use(express.urlencoded({ extended: false }));
 
 //cors
 app.use(cors({
-  origin: 'https://findyourlawyer.netlify.app',
+  origin: 'http://localhost:3000',
   credentials: true
 }));
 
+//RAZORPAY
 
 //user Router
 app.use("/api/users", UserRouter);

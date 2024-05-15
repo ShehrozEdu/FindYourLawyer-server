@@ -41,8 +41,8 @@ module.exports.callback = async (request, response) => {
     .update(bodyText.toString())
     .digest("hex");
 
-  console.log("sig received ", signature);
-  console.log("sig generated ", expectedSignature);
+  // console.log("sig received ", signature);
+  // console.log("sig generated ", expectedSignature);
 
   var result = { status: false };
 
