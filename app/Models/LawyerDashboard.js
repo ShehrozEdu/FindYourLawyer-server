@@ -7,8 +7,8 @@ const LawyerDashboardSchema = new Schema({
   lawyer: { type: Schema.Types.ObjectId, ref: "user" },
   description: String,
   clientName: String,
+  consultationDate: Date, // New field for consultation date
   income: Number,
- 
 });
 
 const LawyerDashboard = mongoose.model("casesLawyer", LawyerDashboardSchema);

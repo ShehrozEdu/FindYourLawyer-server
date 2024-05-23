@@ -5,7 +5,7 @@ const UsersModel = require("../Models/UsersModel");
 const Dashboard = {
   createRequest: expressAsyncHandler(async function (req, res) {
     try {
-      const { clientId, lawyerId, description, clientName } = req.body;
+      const { clientId, lawyerId, description, clientName, consultationDate } = req.body;
 
       // Fetch the lawyer's information
       const lawyer = await UsersModel.findById(lawyerId);
@@ -24,6 +24,7 @@ const Dashboard = {
         lawyer: lawyerId,
         description: description,
         income: feePerCase, // Modified income to be fee per case
+        consultationDate: new Date(consultationDate)
       });
 
       await caseRequest.save();
@@ -33,6 +34,7 @@ const Dashboard = {
         description: caseRequest.description,
         clientName: caseRequest.clientName,
         income: caseRequest.income,
+        consultationDate: caseRequest.consultationDate // Include consultationDate in the response
       });
     } catch (error) {
       console.error(error);
