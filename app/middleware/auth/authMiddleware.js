@@ -40,6 +40,8 @@ const authMiddleware = async (req, res, next) => {
       FirstName: user.FirstName,
       LastName: user.LastName,
       isLawyer: user.isLawyer,
+      isAdmin: user.isAdmin || false,
+      isSuperAdmin: user.isSuperAdmin || false,
       ContactNumber: user.ContactNumber,
       Expertise: user.Expertise,
       State: user.State,

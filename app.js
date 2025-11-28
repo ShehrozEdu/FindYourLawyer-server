@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const UserRouter = require("./app/Routes/Userrouter");
 const PostRouter = require("./app/Routes/PostRouter");
 const OtherRouters = require("./app/Routes/OtherRouters");
+const AdminRouter = require("./app/Routes/AdminRouter");
 
 // const nodemailer = require("nodemailer");
 const {
@@ -41,6 +42,9 @@ app.use("/api/posts", PostRouter);
 
 //other Router
 app.use("/api", OtherRouters);
+
+//admin Router
+app.use("/api/admin", AdminRouter);
 
 //Err Handler
 app.use(errorHandler);

@@ -23,7 +23,9 @@ const UserController = {
         Email: result.Email,
         FirstName: result.FirstName,
         LastName: result.LastName,
-        isLawyer: result.isLawyer
+        isLawyer: result.isLawyer,
+        isAdmin: result.isAdmin || false,
+        isSuperAdmin: result.isSuperAdmin || false,
       },
       message: "Signup successful."
     });
@@ -51,7 +53,9 @@ const UserController = {
         Email: result.Email,
         FirstName: result.FirstName,
         LastName: result.LastName,
-        isLawyer: result.isLawyer
+        isLawyer: result.isLawyer,
+        isAdmin: result.isAdmin || false,
+        isSuperAdmin: result.isSuperAdmin || false,
       },
       message: "Login successful."
     });

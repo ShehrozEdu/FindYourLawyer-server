@@ -48,7 +48,14 @@ const UsersSchema = new Schema(
         return this.isLawyer === true;
       },
     },
- 
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    isSuperAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

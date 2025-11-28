@@ -49,6 +49,8 @@ class UserService {
             LastName: newUser.LastName,
             token: authToken,
             isLawyer: newUser.isLawyer,
+            isAdmin: newUser.isAdmin || false,
+            isSuperAdmin: newUser.isSuperAdmin || false,
         };
     }
 
@@ -75,6 +77,8 @@ class UserService {
             LastName: user.LastName,
             token: authToken,
             isLawyer: user.isLawyer,
+            isAdmin: user.isAdmin || false,
+            isSuperAdmin: user.isSuperAdmin || false,
         };
     }
 
