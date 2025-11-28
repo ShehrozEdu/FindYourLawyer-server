@@ -1,33 +1,77 @@
-const expressAsyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 const UsersModel = require("../../Models/UsersModel");
 
-const authMiddleware = expressAsyncHandler(async (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
   try {
-    let token;
+    // Read token from httpOnly cookie
+    const token = req.cookies.token;
 
-    if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
-      token = req.headers.authorization.split(" ")[1];
-
-      if (token) {
-        const decoded = jwt.verify(token, process.env.JWT_KEY);
-        const user = await UsersModel.findById(decoded?.id).select("-password");
-        
-        if (user) {
-          req.user = user;
-          next();
-        } else {
-          throw new Error("User not found");
-        }
-      } else {
-        throw new Error("Invalid token");
-      }
-    } else {
-      throw new Error("Authorization header missing or invalid");
+    if (!token) {
+      return res.status(401).json({
+        status: false,
+        message: "Not authorized, no token provided"
+      });
     }
+
+    // Verify and decode JWT token
+    const decoded = jwt.verify(token, process.env.JWT_KEY);
+
+    if (!decoded || !decoded.id) {
+      return res.status(401).json({
+        status: false,
+        message: "Not authorized, invalid token"
+      });
+    }
+
+    // Get user from database (exclude password)
+    const user = await UsersModel.findById(decoded.id).select("-Password");
+
+    if (!user) {
+      return res.status(401).json({
+        status: false,
+        message: "Not authorized, user not found"
+      });
+    }
+
+    // Attach decoded user info to request
+    req.user = {
+      _id: user._id,
+      Email: user.Email,
+      FirstName: user.FirstName,
+      LastName: user.LastName,
+      isLawyer: user.isLawyer,
+      ContactNumber: user.ContactNumber,
+      Expertise: user.Expertise,
+      State: user.State,
+      FeePerCase: user.FeePerCase,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt
+    };
+
+    next();
   } catch (error) {
-    res.status(401).send({ message: error.message });
+    console.error("Auth middleware error:", error.message);
+    
+    // Handle specific JWT errors
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({
+        status: false,
+        message: "Not authorized, token expired"
+      });
+    }
+    
+    if (error.name === 'JsonWebTokenError') {
+      return res.status(401).json({
+        status: false,
+        message: "Not authorized, invalid token"
+      });
+    }
+
+    return res.status(401).json({
+      status: false,
+      message: "Not authorized, token invalid or expired"
+    });
   }
-});
+};
 
 module.exports = authMiddleware;

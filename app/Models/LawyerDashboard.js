@@ -9,6 +9,13 @@ const LawyerDashboardSchema = new Schema({
   clientName: String,
   consultationDate: Date, // New field for consultation date
   income: Number,
+  status: { 
+    type: String, 
+    enum: ['pending', 'accepted', 'in_progress', 'completed', 'cancelled'],
+    default: 'pending'
+  },
+}, {
+  timestamps: true
 });
 
 const LawyerDashboard = mongoose.model("casesLawyer", LawyerDashboardSchema);

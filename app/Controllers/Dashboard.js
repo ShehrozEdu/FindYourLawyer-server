@@ -1,6 +1,7 @@
 const expressAsyncHandler = require("express-async-handler");
 const LawyerDashboard = require("../Models/LawyerDashboard");
 const UsersModel = require("../Models/UsersModel");
+const NotificationController = require("./NotificationController");
 
 const Dashboard = {
   createRequest: expressAsyncHandler(async function (req, res) {
@@ -29,12 +30,36 @@ const Dashboard = {
 
       await caseRequest.save();
 
+      // Create notifications for both client and lawyer
+      await NotificationController.createNotification(
+        clientId,
+        'case_created',
+        'Case Request Submitted',
+        `Your case request has been submitted successfully.`,
+        caseRequest._id
+      );
+
+      await NotificationController.createNotification(
+        lawyerId,
+        'case_created',
+        'New Case Request',
+        `You have a new case request from ${clientName}.`,
+        caseRequest._id
+      );
+
       res.status(201).json({
+        status: true,
         message: "Case request created successfully",
-        description: caseRequest.description,
-        clientName: caseRequest.clientName,
-        income: caseRequest.income,
-        consultationDate: caseRequest.consultationDate // Include consultationDate in the response
+        case: {
+          _id: caseRequest._id,
+          description: caseRequest.description,
+          clientName: caseRequest.clientName,
+          income: caseRequest.income,
+          consultationDate: caseRequest.consultationDate,
+          status: caseRequest.status,
+          client: caseRequest.client,
+          lawyer: caseRequest.lawyer
+        }
       });
     } catch (error) {
       console.error(error);

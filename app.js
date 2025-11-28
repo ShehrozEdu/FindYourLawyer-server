@@ -3,6 +3,7 @@ const Razorpay = require("razorpay");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const UserRouter = require("./app/Routes/Userrouter");
 const PostRouter = require("./app/Routes/PostRouter");
 const OtherRouters = require("./app/Routes/OtherRouters");
@@ -19,10 +20,14 @@ const app = express();
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+// Serve uploaded files
+app.use('/uploads', express.static('uploads'));
 
 //cors
 app.use(cors({
-  origin: 'https://findyourlawyer.netlify.app',
+  origin: ['https://findyourlawyer.netlify.app', 'http://localhost:3000', 'http://localhost:3001'],
   credentials: true
 }));
 
